@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Conference ticket generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="code-img">
+        <img src="assets/images/logo-full.svg" alt="" class="coding-logo">
+    </div>
+    <div class="ticket-container">
+        <div class="header">
+            <h1 class="header-text">Your Journey to Coding Conf 2025 Starts Here!</h1>
+            <p>Secure your spot at next year's biggest coding conference.</p>
+        </div>
+        <div class="main-container">
+            <div class="file-upload-section">
+                <p class="upload-avatar">Upload Avatar</p>
+                <div class="file-upload">
+                    <div class="file-upload-icons">
+                        <div class="upload-icon active">
+                            <img src="assets/images/icon-upload.svg">
+                        </div>
+                        <div class="image-options">
+                            <p class="remove">Remove image</p>
+                            <p class="change">Change image</p>
+                        </div>
+                        <p class="drag-drop">Drag and drop or click to upload</p>
+                    </div>
+                    <input type="file" id="fileinput" class="fileinputbtn" accept="image/*">
+                </div>
+                <div class="remember">
+                    <img src="assets/images/icon-info.svg" alt="">
+                    <p class="remember-msg <!--error-->">Upload your photo (JPG or PNG, max size: 500KB).</p>
+                    <!--File too large. Please upload a photo under 50kb.-->
+                </div>
+                <div class="error-message">
+                    <img src="assets/images/icon-error.svg" alt="">
+                    <p class="error-msg"></p>
+                </div>
+            </div>
+
+            <div class="name-section">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" class="name-input">
+                <div class="name-error-msg">
+                    <img src="assets/images/icon-error.svg" alt="">
+                    <p>Please enter your valid name</p>
+                </div>
+            </div>
+
+            <div class="email-section">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" class="email-input" placeholder="example@email.com">
+                <div class="email-error-msg">
+                    <img src="assets/images/icon-error.svg" alt="">
+                    <p>Please enter a valid email address</p>
+                </div>
+            </div>
+
+            <div class="github-section">
+                <label for="github">Github Username</label>
+                <input type="text" id="github" class="github-name" placeholder="@yourusername">
+                <div class="github-error-msg">
+                    <img src="assets/images/icon-error.svg" alt="">
+                    <p>Please type your Github username</p>
+                </div>
+            </div>
+
+            <button class="ticket-generate-btn">Generate My Ticket</button>
+        </div>
+    </div>
+
+    <!--User Ticket section-->
+
+    <div class="user-ticket">
+        <h1 class="ticket-congrats">Congrats,
+            <span class="user-name">Jonatan Kristof</span>!
+            Your ticket is ready.
+        </h1>
+
+        <p class="ticket-email">
+            We've emailed your ticket to <span class="user-email">jonatan@email.com</span> and will send updates in the run-up to the event.
+        </p>
+
+        <div class="ticket-img">
+            <img src="assets/images/logo-full.svg" alt="" class="coding-logo">
+            <p class="ticket-date">jan 31, 2025 / Austin, TX</p>
+
+            <div class="user-details">
+                <div class="user-img">
+                    <img src="" alt="User-img">
+                </div>
+                <div class="user-about">
+                    <p class="ticket-name">Jonatan Kristof</p>
+                    <div class="user-github">
+                        <img src="assets/images/icon-github.svg" alt="github icon">
+                        <p class="user-git-tag">@jonatanKristof0101</p>
+                    </div>
+                </div>
+            </div>
+            <p class="user-id">#01609</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

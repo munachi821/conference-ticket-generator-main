@@ -1,0 +1,378 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inconsolata;
+}
+:root{
+    --Neutral-0: hsl(0, 0%, 100%);
+    --Neutral-300: hsl(252, 6%, 83%);
+    --Neutral-500: hsl(245, 15%, 58%);
+    --Neutral-700: hsl(245, 19%, 35%);
+    --Neutral-900: hsl(248, 70%, 10%);
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: #0F013F;
+}
+.ticket-container{
+    display: flex;/*should be flex*/
+    width: 500px;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+}
+.ticket-container .header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.coding-logo{
+    margin-top: 20px;
+}
+.ticket-container .header .header-text{
+    margin-top: 35px;
+    text-align: center;
+    color: #fff;
+}
+.ticket-container .header p{
+    color: #fff;
+    margin-top: 20px;
+}
+.main-container{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+.fileinputbtn{
+    display: none;
+}
+.file-upload-section{
+    width: 100%;
+    color: white;
+    position: relative;
+}
+.file-upload-section .upload-avatar{
+    text-align: left;
+    margin-bottom: 10px;
+}
+.file-upload-section .file-upload{
+    width: 100%;
+    z-index: -1;
+    max-height: 150px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff21;
+    border-radius: 10px;
+    outline-style: dashed;
+    outline-width: 2px;
+    outline-color: var(--Neutral-500);
+    transition: 0.2s ease-in;
+}
+.file-upload-section .file-upload.drag-over{
+    outline-width: 2px;
+    outline-color: #007BFF;
+    background-color: rgba(0, 123, 255, 0.1);
+}
+.file-upload:hover{
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.18);
+}
+.file-upload-section .file-upload-icons{
+    height: fit-content;
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    align-items: center;
+}
+.image-options {
+    display: none;/*should be flex*/
+}
+.image-options .remove{
+    padding: 5px 10px;
+    background: var(--Neutral-500);
+    margin-right: 10px;
+    border-radius: 3px;
+}
+.image-options .change{
+    z-index: 1;
+    padding: 5px 10px;
+    background: var(--Neutral-500);
+    border-radius: 3px;
+}
+.image-options .remove:hover,.image-options .change:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.upload-icon img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.upload-icon{
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    object-position: center;
+    display: flex;
+    margin-bottom: 15px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: var(--Neutral-700);
+}
+.file-upload-section .error-message{
+    display: none; /*Should be flex*/
+    color: #F47363;
+    margin-top: 10px;
+    font-size: 10px;
+    align-items: center;
+}
+.error-message img{
+    margin-right: 5px;
+}
+.remember{
+    display: flex;
+    font-size: 10px;
+    margin-top: 10px;
+    align-items: center;
+    /*flex-direction: column;*/
+}
+.remember img{
+    margin-right: 5px;
+}
+.remember .remember-msg{
+    margin: 0px;
+}
+.name-section{
+    color: #fff;
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+}
+.name-section .name-input {
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 8px;
+    outline: none;
+    padding: 10px;
+    color: #fff;
+    border: 1px solid var(--Neutral-300);
+    background: #ffffff21;
+    transition: 0.2s ease-in;
+}
+.name-section .name-input:hover{
+    background: rgba(255, 255, 255, 0.18);
+}
+.email-section{
+    color: #fff;
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+}
+.email-section .email-input{
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 8px;
+    outline: none;
+    padding: 10px;
+    color: #fff;
+    border: 1px solid var(--Neutral-300);
+    background: #ffffff21;
+    transition: 0.2s ease-in;
+}
+.email-section .email-input:hover{
+    background: rgba(255, 255, 255, 0.18);
+}
+.email-input.error{
+    border: 1px solid #F47363;
+}
+.email-error-msg{
+    display: none;/*should be flex*/
+    color: #F47363;
+    font-size: 10px;
+    margin-top: 7px;
+    align-items: center;
+}
+.email-error-msg img{
+    margin-right: 5px;
+}
+.github-section{
+    color: #fff;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+.github-section .github-name{
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 8px;
+    outline: none;
+    padding: 10px;
+    color: #fff;
+    border: 1px solid var(--Neutral-300);
+    background: #ffffff21;
+    transition: 0.2s ease-in;
+}
+.github-section .github-name:hover{
+    background: rgba(255, 255, 255, 0.18);
+}
+.name-error-msg, .github-error-msg{
+    display: none;/*should be flex*/
+    color: #F47363;
+    font-size: 10px;
+    margin-top: 7px;
+    align-items: center;
+}
+.name-error-msg img, .github-error-msg img{
+    margin-right: 5px;
+}
+::placeholder{
+    color: var(--Neutral-300);
+}
+.ticket-generate-btn{
+    height: 40px;
+    outline: none;
+    border: none;
+    background: #F47363;
+    color: var(--Neutral-900);
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 800;
+    box-shadow: 0 5px 0 #d76e60;
+}
+.ticket-generate-btn:hover{cursor: pointer;}
+.ticket-generate-btn:active{
+    cursor: pointer;
+    box-shadow: none;
+    transform: translateY(5px);
+}
+
+/* User Ticket*/
+.user-ticket{
+    width: 500px;
+    display: none;/*Should be flex*/
+    flex-direction: column;
+    align-items: center;
+}
+.user-ticket .ticket-congrats{
+    color: #fff;
+    font-size: 35px;
+    margin-top: 30px;
+    text-align: center;
+}
+.ticket-congrats span{
+    background: linear-gradient(to right, #F47363,#fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.user-ticket .ticket-email{
+    margin-top: 20px;
+    text-align: center;
+    color: var(--Neutral-300);
+    width: 340px;
+    line-height: 22px;
+}
+.ticket-email .user-email{
+    color: #fa7b6c;
+}
+.ticket-img{
+    height: 280px;
+    width: 500px;
+    padding: 20px;
+    margin-top: 50px;
+    position: relative;
+    background-size: cover;
+    background: url("assets/images/pattern-ticket.svg");
+}
+.ticket-img .ticket-date{
+    margin-top: 5px;
+    color: var(--Neutral-300);
+    margin-left: 44px;
+}
+.user-details{
+    margin-top: 70px;
+    display: flex;
+    color: #fff;
+    align-items: center;
+}
+.user-img{
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+}
+.user-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.user-details .user-about{
+    font-size: 25px;
+    margin-left: 15px;
+}
+.user-github{
+    display: flex;
+    font-size: 16px;
+    margin-top: 5px;
+    align-items: center;
+    color: var(--Neutral-300);
+}
+.user-github .user-git-tag{
+    margin-left: 10px;
+}
+.user-id{
+    font-size: 22px;
+    position: absolute;
+    transform: rotate(90deg);
+    color: var(--Neutral-500);
+    left: 425px;
+    top: 127px;
+}
+
+@media (max-width: 504px) {
+    body{
+        max-width: 504px;
+        overflow-x: hidden;
+    }
+    .ticket-container .header .header-text{
+        font-size: 23px;
+        max-width: 300px;
+        min-width: 10px;
+    }
+    .ticket-container .header p{
+        font-size: 14px;
+    }
+}
+@media (max-width: 375px) {
+    body{
+        max-width: 375px;
+        overflow-x: hidden;
+    }
+    .ticket-container{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .ticket-container .header .header-text{
+        font-size: 23px;
+        max-width: 315px;
+        margin-top: 15px;
+    }
+    .ticket-container .header p{
+        font-size: 11px;
+    }
+    .main-container{
+        width: 342px;
+    }
+}
