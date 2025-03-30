@@ -38,6 +38,9 @@ A web application that allows users to generate their conference tickets by prov
 3. Click the "Generate My Ticket" button.
 4. View your generated ticket with your details and unique ID.
 
+## Preview
+Check out the site at https://confrence-ticket-generator.netlify.app/
+
 ## Technologies Used
 
 - HTML
@@ -45,7 +48,6 @@ A web application that allows users to generate their conference tickets by prov
 - JavaScript
 
 ## Author
-
 Developed by [Munachi]([https://github.com/yourusername](https://github.com/munachi821)).
 
 
