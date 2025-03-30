@@ -14,18 +14,15 @@ const removeImage = document.querySelector(".image-options .remove");
 const changeImage = document.querySelector(".image-options .change");
 const drag_drop = document.querySelector(".drag-drop");
 
-removeImage.addEventListener("click", (e) => {
-    previewIMG.src = 'assets/images/icon-upload.svg';
-    drag_drop.style.display = "flex";
-    imageOptions.style.display = "none";
-    savedImage = null;
-    e.preventDefault();
-})
 
 const MAX_SIZE = 500 * 1024; // 500KB
 let savedImage = null;
 
 function handleFile(file) {
+    /* if(savedImage){
+        return; //prevents new uploads
+    } */
+    console.log(savedImage)
     if(file.size > MAX_SIZE) {
         rememberMsg.style.display = "none";
         errorMsg.style.display = "flex";
@@ -43,14 +40,20 @@ function handleFile(file) {
         savedImage = e.target.result;
         drag_drop.style.display = "none";
         imageOptions.style.display = "flex";
+
+        //Disable drop functionality when image is uploaded
+        dropArea.removeEventListener("drop", dropareafunc);
+        dropArea.classList.add("disabled");
     };
     reader.readAsDataURL(file);
 }
 
-//Drag & Drop Events
+//Drag & Drop Events (Prevent if an image exists)
 dropArea.addEventListener("dragover", (e) => {
-    e.preventDefault();
-    dropArea.classList.add("drag-over");
+    if(!savedImage){
+        e.preventDefault();
+        dropArea.classList.add("drag-over");
+    }
 });
 dropArea.addEventListener("dragleave", (e) => {
     e.preventDefault();
@@ -69,13 +72,32 @@ const dropareafunc = (e) => {
 dropArea.addEventListener("drop", dropareafunc);
 
 //Click to upload
-dropArea.addEventListener("click", () => fileInput.click());
+dropArea.addEventListener("click", () => {
+    if(!savedImage){
+        fileInput.click();
+    }
+});
+
 changeImage.addEventListener("click", () => fileInput.click());
 fileInput.addEventListener("change", (e) => {
-    const file = e.target.files[0];
-    if(file){
-        handleFile(file);
+    if(!savedImage){ //Prevent uploading a new file if an image already exists
+        const file = e.target.files[0];
+        if(file){
+            handleFile(file);
+        }
     }
+})
+
+removeImage.addEventListener("click", (e) => { //(Remove the image allows for new upload)
+    previewIMG.src = 'assets/images/icon-upload.svg';
+    drag_drop.style.display = "flex";
+    imageOptions.style.display = "none";
+    savedImage = null;
+
+    // Re-enable drop functionality when image is removed
+    dropArea.addEventListener("drop", dropareafunc);
+    dropArea.classList.remove("disabled");
+    e.preventDefault();
 })
 
 
@@ -152,13 +174,13 @@ const userTicketDetails = (email, name, savedImage, githubID)=>{
 
 }
 
-function isImage() {
+/* function isImage() {
     let isImageUploaded = savedImage !== null;
     if(isImageUploaded){
         dropArea.removeEventListener("drop", dropareafunc);
     }
 }
-setInterval(isImage, 2000);
+setInterval(isImage, 2000); */
 
 function isFormValid () {
     let githubID = githubUsername.value.trim();
