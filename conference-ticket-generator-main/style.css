@@ -375,4 +375,30 @@ body{
     .main-container{
         width: 342px;
     }
+    .ticket-img{
+        width: 342px;
+        height: 280px;
+        background: url("assets/images/pattern-ticket-small-screen.svg");
+    }
+    .coding-logo{
+        margin-top: 38px;
+    }
+    .user-img{
+        width: 60px;
+        height: 60px;
+    }
+    .user-details{
+        margin-top: 27px;
+    }
+    .user-details .user-about{
+        font-size: 19px;
+    }
+    .user-id{
+        left: 289px;
+        top: 117px;
+    }
+    .user-ticket .ticket-congrats{
+        width: 350px;
+        font-size: 30px;
+    }
 }
